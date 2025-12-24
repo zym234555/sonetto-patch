@@ -6,7 +6,7 @@ Run `launcher.exe` (**AS ADMINISTRATOR**)
 
 ### Want to compile it yourself?
 - Clone the repo
-- Install rustup
+- Install [rust]((https://rust-lang.org/tools/install/))
 - Run `cargo build --release`
 
 ### What does it patch, actually?
