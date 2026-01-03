@@ -51,7 +51,7 @@ unsafe extern "win64" fn on_make_initial_url(reg: *mut Registers, _: usize) {
         return;
     }
 
-    let mut new_url = String::from("http://127.0.0.1:21000");
+    let mut new_url = String::from("http://127.0.0.1:23000");
     url.split('/').skip(3).for_each(|s| {
         new_url.push('/');
         new_url.push_str(s);
@@ -84,7 +84,7 @@ unsafe extern "win64" fn on_browser_load_url(reg: *mut Registers, _: usize) {
     }
 
     // Rewrite to local server
-    let mut new_url = String::from("https://127.0.0.1:21000");
+    let mut new_url = String::from("https://127.0.0.1:23000");
     url.split('/').skip(3).for_each(|s| {
         new_url.push('/');
         new_url.push_str(s);
