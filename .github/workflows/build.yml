@@ -1,0 +1,27 @@
+name: 🛠️ Build
+ 
+on:
+  workflow_dispatch:
+ 
+jobs:
+  build:
+    runs-on: windows-latest
+ 
+    steps:
+    - name: ⬇️ Checkout code
+      uses: actions/checkout@v4
+ 
+    - name: ⚙️ Install Rust toolchain
+      uses: dtolnay/rust-toolchain@master
+      with:
+        toolchain: nightly-2025-12-06
+        targets: x86_64-pc-windows-msvc
+ 
+    - name: 🔨 Build
+      run: cargo build --release
+ 
+    - name: ⬆️ Upload patch
+      uses: actions/upload-artifact@v4
+      with:
+        name: sonetto-patch
+        path: target/release/
